@@ -21,6 +21,8 @@ public class Car : MonoBehaviour
     {
         wheelColliderLeftBack.motorTorque = Input.GetAxis("Vertical") * motorTorque;
         wheelColliderRightBack.motorTorque = Input.GetAxis("Vertical") * motorTorque;
+        wheelColliderLeftFront.steerAngle = Input.GetAxis("Horizontal") * maxSteer;
+        wheelColliderRightFront.steerAngle = Input.GetAxis("Horizontal") * maxSteer;
     }
     void Update()
     {
