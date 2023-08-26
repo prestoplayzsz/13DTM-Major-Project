@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Car : MonoBehaviour
-{
+{ 
+    public Transform centerOfMass;
+
     public WheelCollider wheelColliderLeftFront;
     public WheelCollider wheelColliderRightFront;
     public WheelCollider wheelColliderLeftBack;
@@ -16,6 +18,13 @@ public class Car : MonoBehaviour
 
     public float motorTorque = 100f;
     public float maxSteer = 20f;
+    private Rigidbody _rigidbody;
+
+    void Start()
+    {
+        _rigidbody = GetComponent<Rigidbody>();
+        _rigidbody.centerOfMass = centerOfMass.localPosition;
+    }
 
     void FixedUpdate()
     {
