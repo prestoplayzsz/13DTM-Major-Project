@@ -54,8 +54,10 @@ public class Player : MonoBehaviour
             return;
         }
 
+        // If this is checkpoint 1...
         if (collider.gameObject.name == "1")
         {
+            // ...and we've completed a lap, end the current lap
             if (lastCheckpointPassed == checkpointCount)
             {
                 EndLap();
@@ -84,7 +86,7 @@ public class Player : MonoBehaviour
         if (controlType == ControlType.HumanInput)
         {
             carController.Steer = GameManager.Instance.InputController.SteerInput;
-            carController.Throttle = GameManager.Instance.InputController.ThrottelInput;
+            carController.Throttle = GameManager.Instance.InputController.ThrottleInput;
         }
     }
 }
