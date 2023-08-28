@@ -17,7 +17,9 @@ public class CarController : MonoBehaviour
 
     void Start()
     {
+        // Get the wheels
         wheels = GetComponentsInChildren<Wheel>();
+        // sets the rigidbody on the center of mass
         _rigidbody = GetComponent<Rigidbody>();
         _rigidbody.centerOfMass = centerOfMass.localPosition;
     }
@@ -28,7 +30,7 @@ public class CarController : MonoBehaviour
     }
     void Update()
     {
-
+        // sets variables for the wheels
         foreach (var wheel in wheels)
         {
             wheel.SteerAngle = Steer * maxSteer;

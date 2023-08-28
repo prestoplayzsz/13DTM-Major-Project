@@ -10,7 +10,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        // sets the instance
         Instance = this;
+        // calls for the input controller
         InputController = GetComponentInChildren<InputController>();
     }
 

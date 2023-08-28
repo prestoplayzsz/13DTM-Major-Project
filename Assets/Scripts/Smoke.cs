@@ -10,6 +10,7 @@ public class Smoke : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // pause the smoke particles
         particles.SetActive(false);
     }
 
@@ -19,12 +20,8 @@ public class Smoke : MonoBehaviour
         //Detect when the up arrow key is pressed down
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
+            // unpause the smoke particles
             particles.SetActive(true);
         }
-            
-
-        //Detect when the up arrow key has been released
-        
-
     }
 }
